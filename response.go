@@ -37,3 +37,9 @@ func (rep response) Send() {
 		return
 	}
 }
+
+func (rep *response) WriteBody(data ...[]byte) {
+	for _, v := range data {
+		rep.body = append(rep.body, v...)
+	}
+}
